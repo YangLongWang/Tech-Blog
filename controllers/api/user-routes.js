@@ -1,9 +1,8 @@
-const routes = require('express').Router();
-const router = require('.');
+const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 // GET /api/users
-routes.get('/', (req, res) => {
+router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
   })
@@ -15,7 +14,7 @@ routes.get('/', (req, res) => {
 });
 
 // GET /api/users/1
-routes.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
@@ -50,7 +49,7 @@ routes.get('/:id', (req, res) => {
 });
 
 // POST /api/users
-routes.post('/', (req, res) => {
+router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password
@@ -70,7 +69,7 @@ routes.post('/', (req, res) => {
     });
 });
 
-routes.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       username: req.body.username
@@ -103,7 +102,7 @@ routes.post('/login', (req, res) => {
   });
 });
 
-routes.post('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -114,7 +113,7 @@ routes.post('/logout', (req, res) => {
 });
 
 // PUT /api/users/1
-routes.put('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -135,7 +134,7 @@ routes.put('/:id', (req, res) => {
 });
 
 // DELETE /api/users/1
-routes.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
       id: req.params.id
@@ -154,4 +153,4 @@ routes.delete('/:id', (req, res) => {
     });
 });
 
-module.exports = routes;
+module.exports = router;
