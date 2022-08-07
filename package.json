@@ -4,7 +4,7 @@
   "description": "<details> <summary>Table of Content</summary>",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "sequelize": "^6.21.3"
   },
   "devDependencies": {
+    "jest": "^28.1.3",
     "nodemon": "^2.0.19"
   }
 }
