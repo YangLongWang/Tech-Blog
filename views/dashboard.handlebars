@@ -4,8 +4,7 @@
   <section>
     {{#each posts as |post|}}
     <article>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Update Post</a>
+      {{> dashboard-post post}}
     </article>
     {{/each}}
   </section>
