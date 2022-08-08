@@ -1,17 +1,18 @@
 {{> post-info post}}
 
+{{> comments post.comments}}
+
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
+<form class="comment-form vstack gap-3">
+  <div class="row ">
+    <h3>Comment</h3>
+    <textarea class="textarea" name="comment-body"></textarea>
   </div>
-  <div>
-    <button type="submit">Submit</button>
+  <div class="comment-submit row justify-content-center">
+    <button class="btn-submit-comment" type="submit">Submit</button>
   </div>
 </form>
 {{/if}}
-
-{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
