@@ -69,7 +69,7 @@ article {
   padding: 10px;
 }
 
-.btn-login, .btn-signup, .btn-submit-comment, .btn-create-post, .btn-add-post {
+.btn-login, .btn-signup, .btn-submit-comment, .btn-create-post, .btn-add-post, .btn-update-post, .btn-delete-post {
   border-radius: 7px;
   background-color: grey;
   padding: 5px;
@@ -100,4 +100,8 @@ article {
 
 .text {
   background-color: beige;
+}
+
+.edit-post {
+  padding: 10px;
 }

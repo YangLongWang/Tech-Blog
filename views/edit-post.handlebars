@@ -1,6 +1,6 @@
-<article>
+<article class="edit-post">
   <h2>Edit Post</h2>
-  <form class="edit-post-form">
+  <form class="edit-post-form vstack gap-3">
     <div>
       <label for="edit-title" class="form-label">Title</label>
       <input type="text" class="form-control" id="edit-title" name="post-title" value="{{post.title}}" />
@@ -9,12 +9,12 @@
       <label for="edit-content" class="form-label">Content</label>
       <input type="text" class="form-control" id="edit-content" name="post-content" value="{{post.content}}" />
     </div>
-    <button type="submit">Update Post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit" class="btn-update-post">Update Post</button>
+    <button type="button" class="btn-delete-post">Delete Post</button>
   </form>
-  <a href="/dashboard">&larr; Back to dashboard</a>
 </article>
+<a href="/dashboard">Back to dashboard</a>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+{{!-- <script src="/javascript/comment.js"></script> --}}
