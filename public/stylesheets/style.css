@@ -18,6 +18,10 @@ button {
   cursor: pointer;
 }
 
+button:hover, #logout:hover {
+  color: #0d6efd;
+}
+
 .header .nav button {
   color: beige;
   background-color: black;
