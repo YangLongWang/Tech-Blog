@@ -8,7 +8,6 @@
   - [Usage](#usage)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Video](#video)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -23,47 +22,71 @@ A CMS-style blog site so that people can publish articles, blog posts, and any t
 
 ### Usage
 
-The application will be deployed on Heroku, link: .
+The application will be deployed on Heroku, link: https://tech-blog-app-6408.herokuapp.com/.
 
 ### The challenge
 
 Users should be able to:
 
-- 
+- login and logout the site
+- create post
+- update and delete posts posted by the user
+- leave a comment for posts
 
 ### Screenshot
 
-![](./res/images/Note%20Taker.png)
-![](./res/images/Note%20Taker2.png)
-
-### Video
-
-- Video link: [https://drive.google.com/file/d/1VUGSm0Am_V7-9DflT9l9DMLq0mJysNsU/view](https://drive.google.com/file/d/1VUGSm0Am_V7-9DflT9l9DMLq0mJysNsU/view)
+![](./assets/images/The%20Tech%20Blog%20-%201.png)
+![](./assets/images/The%20Tech%20Blog%20-%202.png)
+![](./assets/images/The%20Tech%20Blog%20-%203.png)
+![](./assets/images/The%20Tech%20Blog%20-%204.png)
+![](./assets/images/The%20Tech%20Blog%20-%205.png)
+![](./assets/images/The%20Tech%20Blog%20-%206.png)
 
 ### Links
 
-- Solution URL: [https://github.com/YangLongWang/Note-Taker](https://github.com/YangLongWang/Note-Taker)
-- Deployed URL: [https://note-taker-app-6408.herokuapp.com/](https://note-taker-app-6408.herokuapp.com/)
+- Solution URL: [https://github.com/YangLongWang/Tech-Blog](https://github.com/YangLongWang/Tech-Blog)
+- Deployed URL: [https://tech-blog-app-6408.herokuapp.com/](https://tech-blog-app-6408.herokuapp.com/)
 
 ## My process
 
 ### Built with
 
-- HTML
+- Handlebars
 - CSS
 - JavaScript
 
 ### What I learned
 
-- 
+- built handlebars and partials by myself
 
 To see how I add code snippets, see below:
 
-```JS
+```Handlebars
+<section>
+  <h2>Your Dashboard</h2>
+  {{#if posts.length}}
+  <section>
+    {{#each posts as |post|}}
+    <article>
+      {{> dashboard-post post}}
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+  <div class="add-post">
+    <a href="/dashboard/create" class="edit-link row justify-content-center"><button class="btn-add-post">+ New Post</button></a>
+  </div>
+</section>
 
-
+<div class="list-group">
+  <a href="/dashboard/edit/{{id}}" class="post-header edit-link list-group-item">
+    <h5 class="mb-1 title">{{title}}</h5>
+    <small>
+      Posted on {{format_date created_at}}
+    </small>
+  </a>
+</div>
 ```
-
 ## Author
 
 - Github - [Longyang Wang](https://github.com/YangLongWang)
