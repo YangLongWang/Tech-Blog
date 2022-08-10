@@ -22,7 +22,7 @@ A CMS-style blog site so that people can publish articles, blog posts, and any t
 
 ### Usage
 
-The application will be deployed on Heroku, link: https://tech-blog-app-6408.herokuapp.com/.
+The application will be deployed on Heroku, link: https://tech-blog-app-6408.herokuapp.com/
 
 ### The challenge
 
