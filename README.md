@@ -32,6 +32,7 @@ Users should be able to:
 - create post
 - update and delete posts posted by the user
 - leave a comment for posts
+- re-login after 5 minutes, maximum session retention time is 5 minutes after login
 
 ### Screenshot
 
